@@ -13,12 +13,18 @@
       "policies": [
         {
           "effect": "allow",
-          "actions": [
-            "post"
-          ],
-          "principals": [
-            "vrn:vtex.vtex-id:*:*:*:user/vtexappkey-appvtex"
-          ]
+          "actions": ["post"],
+          "principals": ["vrn:vtex.vtex-id:*:*:*:user/vtexappkey-appvtex"]
+        }
+      ]
+    },
+    "keep-alive": {
+      "path": "/_v/external-prices/keep-alive",
+      "public": true,
+      "policies": [
+        {
+          "effect": "allow",
+          "actions": ["get"]
         }
       ]
     }
