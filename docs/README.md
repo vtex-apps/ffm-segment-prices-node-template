@@ -6,7 +6,7 @@ A reference IO app to fetch segmented prices from main account.
 
 If you wish to use the VTEX Pricing as the source of your prices the app already handle that based on the priceTables configured in the user profile. You will also need to ask our support team to enable and configure the pricing hub feature.
 
-For mor information visit: [Pricing Hub documentation](https://developers.vtex.com/vtex-rest-api/docs/pricing-hub) and [Configuring price tables for specific users](https://help.vtex.com/tutorial/setting-up-price-tables-for-specific-users--5S9oDOMHNmY4K0kAewAiWY)
+For more information visit: [Pricing Hub documentation](https://developers.vtex.com/vtex-rest-api/docs/pricing-hub) and [Configuring price tables for specific users](https://help.vtex.com/tutorial/setting-up-price-tables-for-specific-users--5S9oDOMHNmY4K0kAewAiWY)
 
 ## Implementation using external price provider
 
