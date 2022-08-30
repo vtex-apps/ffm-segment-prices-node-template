@@ -1,32 +1,14 @@
 import { NotFoundError } from '@vtex/api'
 
 import type { Profile } from '../typings/profileSystem'
+import { fetchPriceTables } from './fetchPriceTable'
 
 export async function fetchPrice(ctx: Context, next: Next) {
   const { clients, body } = ctx
 
-  const { profileSystem, pricing } = clients
+  const { pricing } = clients
 
-  let currentProfile: Profile | null = null
-
-  if (body.context.email) {
-    try {
-      currentProfile = (await profileSystem.getProfileInfo(
-        {
-          email: body.context.email,
-          userId: body.context.email,
-        },
-        'priceTables'
-      )) as Profile
-    } catch (e) {
-      ctx.vtex.logger.warn({
-        message: 'ExternalPriceApp_FetchPrice_NoProfile',
-        e,
-      })
-
-      throw e
-    }
-  }
+  const currentProfile: Profile | null = await fetchPriceTables(ctx)
 
   const price = await pricing.getPrice(
     body.item.skuId,

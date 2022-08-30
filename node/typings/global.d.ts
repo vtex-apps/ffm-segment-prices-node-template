@@ -8,6 +8,7 @@ declare global {
   interface State extends RecorderState {
     quote?: Quote
     body: ExternalPriceInput
+    pricingAccount: string
   }
 
   type Next = () => Promise<void>
